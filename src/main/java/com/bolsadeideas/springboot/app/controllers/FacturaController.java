@@ -50,12 +50,15 @@ public class FacturaController {
 		Factura factura = clienteService.fetchFacturaByIdWithClienteWhithItemFacturaWithProducto(id); // clienteService.findFacturaById(id);
 
 		if (factura == null) {
-			flash.addFlashAttribute("error", messageSource.getMessage("text.factura.flash.db.error", null, locale));
+			flash.addFlashAttribute("error", messageSource
+					.getMessage("text.factura.flash.db.error", null, locale));
 			return "redirect:/listar";
 		}
 
 		model.addAttribute("factura", factura);
-		model.addAttribute("titulo", String.format(messageSource.getMessage("text.factura.ver.titulo", null, locale), factura.getDescripcion()));
+		model.addAttribute("titulo", String.format(messageSource
+				.getMessage("text.factura.ver.titulo", null, locale),
+				factura.getDescripcion()));
 		return "factura/ver";
 	}
 

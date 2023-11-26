@@ -1,4 +1,4 @@
-package com.bolsadeideas.springboot.app;
+//package com.bolsadeideas.springboot.app;
 
 import com.bolsadeideas.springboot.app.auth.handler.LoginSuccessHandler;
 import org.springframework.beans.factory.annotation.Autowired;

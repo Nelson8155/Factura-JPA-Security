@@ -49,4 +49,12 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{
                 .exceptionHandling().accessDeniedPage("/error_403");
     }
 
+    @Autowired
+    public void configurerGlobal(AuthenticationManagerBuilder build) throws Exception
+    {
+        build.userDetailsService(userDetailsService)
+                .passwordEncoder(passwordEncoder);
+
+    }
+
 }
